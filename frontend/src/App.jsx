@@ -458,26 +458,25 @@ function ContactSection() {
   };
 
   const handleFormSubmit = async (e) => {
-
     e.preventDefault();
     try {
       const req = await fetch(`${baseUrl}/contact`, {
         method: "POST",
-        headers: { "Content-Type": "applicaton/json" },
-        body: JSON.stringify(formData)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-
-      if(response) {
-        console.log("Message send successfully");
-        return;
+  
+      if (req.ok) {
+        console.log("Message sent successfully");
+        setFormData({ name: "", email: "", message: "" });
       } else {
         console.error("Failed to send the message");
       }
-    } catch(err) {
-      console.log("Unexpected error occured");
+    } catch (err) {
+      console.log("Unexpected error occurred:", err);
     }
-
   };
+  
 
   return (
     <section id="contact" className="py-16 px-4 md:px-20 lg:px-40 bg-blue-50">

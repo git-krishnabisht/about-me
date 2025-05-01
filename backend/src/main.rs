@@ -16,7 +16,6 @@ struct ContactForm {
 #[post("/contact")]
 async fn contact_handler(form: web::Json<ContactForm>) -> impl Responder {
 
-    println!("{:?}", form.name);
     let gmail_user = env::var("GMAIL_USER").expect("missing GMAIL_USER");
     let gmail_pass = env::var("GMAIL_PASS").expect("missing GMAIL_PASS");
 
