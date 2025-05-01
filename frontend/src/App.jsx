@@ -23,7 +23,7 @@ function DetailsSection() {
             Krishna Singh Bisht
           </p>
           <p className="text-sm md:text-base text-gray-600 mt-2 sm:justify-center">
-            CEO & CFO of finishup.com
+            WANNABE versatile software developer
           </p>
           <div className="flex flex-row gap-4 mt-4 justify-center md:justify-start">
             <a
@@ -234,32 +234,28 @@ function AboutSection() {
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-2/3">
           <p className="text-gray-700 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-            dolorum deserunt dolorem dolor nihil tenetur! Dolorum a deleniti
-            distinctio ipsum dicta deserunt similique officiis facere eligendi
-            hic non nisi modi praesentium, perferendis voluptatem, aliquid,
-            eaque voluptas. Deserunt repellat deleniti corporis suscipit nam,
-            accusantium magni dolorum magnam sint iure, possimus debitis quo.
-            Fugiat culpa officia cum, excepturi adipisci repellat aspernatur
-            necessitatibus?
+            Hey! Welcome.
+            <br/>
+            Me?
+            <br/>
+            I ALWAYS learn and make my head-hot over some 0's and 1's and like to shoot my arrow at multiple bits.
+            <br/>
+            I do front-end & back-end ( i will call it ) development, hence i know enough stuff about fullstack developement to let it live its full life cycle. 
           </p>
           <p className="text-gray-700 mb-4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nihil
-            expedita adipisci tenetur eveniet esse, quisquam consequuntur rem
-            explicabo velit, quasi eligendi reiciendis. Expedita atque, dolorem
-            minima fugit libero numquam tenetur reprehenderit odio voluptatibus
-            vel, iste quod ipsa accusamus laboriosam quia voluptate sunt nostrum
-            saepe modi accusantium! Similique ea odit reprehenderit sapiente ex
-            consequatur illum! Tempore saepe reiciendis veritatis inventore?
+            Sometimes i let my CPU ( cuz me ain't got no GPU ) work overtime to help my ML model become stronger, so it can score above 98% in its board exams, just as my ML models is becoming stronger minute-by-minute i am also getting to know the ML world better day-by-day, my knowledge about its world it not that strong but yeah ATLEAST I KNOW SOMETING, unlike some wonderer here.
+
+            <br/>
+             woah woah, i was just kidding.
+             </p>
+          <p className="text-gray-700 mb-4">
+            If i am not doing either of those things you'll find my horses running through the lines of github repos, stack of research papers, injesting algorithms and galloping through leetcodes or sometime codeforces.
           </p>
-          <p className="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-            perspiciatis repellat impedit, commodi omnis illum, placeat enim
-            eligendi autem consectetur, culpa harum perferendis nesciunt
-            assumenda obcaecati blanditiis nam. Modi a odio incidunt, explicabo
-            ullam nostrum eaque accusamus sed in tenetur!
-          </p>
+          <p className="text-gray-700 mb-4">
+            Yeah man its fun and there's a long road ahead of me to travel of which i don't know the distancei, hence for that my horses needs to be healthy and the rider too, getting it.
+            </p>
         </div>
+
         <div className="md:w-1/3 bg-blue-100 p-6 rounded-lg border-2 border-black">
           {" "}
           <h3 className="text-xl font-semibold mb-4">Quick Facts</h3>
@@ -267,24 +263,32 @@ function AboutSection() {
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
               <span>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Will become a billionare, if not in $ then in love, lol.
               </span>
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              <span>Lorem ipsum dolor sit.</span>
+              <span> 
+                Learned C# then gave up on it, I was happy then.
+              </span>
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              <span>Lorem ipsum dolor sit amet.</span>
+              <span> 
+                ChatGPT is my cousin's brother 
+              </span>
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              <span>Lorem ipsum.</span>
+              <span> 
+                My mom calls me handsome
+              </span>
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              <span>Lorem ipsum dolor sit amet.</span>
+              <span> 
+                Unemployed :\
+              </span>
             </li>
           </ul>
         </div>
@@ -319,15 +323,14 @@ function ProjectsSection() {
   const projects = [
     {
       title: "Hostel Outing Application",
-      description:
-        "A comprehensive financial dashboard for businesses to track revenue, expenses, and forecasts in real-time.",
+      description:"An application for hostel students that automates the process of taking permission from warden to go outside the premises.", 
       tags: ["Angular", "Asp.Net", "SQL"],
       link: "https://github.com/krishnaasx/HostelOutingApplication",
     },
     {
       title: "Chat Application",
       description:
-        "AI-powered tool that analyzes spending patterns and provides personalized budget recommendations.",
+        "An Application that lets individuals to talk in real time with each other with levereging the functionalities of websockets",
       tags: ["ReactJs", "NodeJs", "PostgreSQL", "Socket.io"],
       link: "https://github.com/krishnaasx/chat-app",
     },
@@ -351,15 +354,15 @@ function SkillsSection() {
   const skills = [
     {
       category: "Programming Languages",
-      items: ["JavaScript", "Python", "Java", "SQL", "TypeScript"],
+      items: ["C++", "Python", "Javascript"],
     },
     {
       category: "Frameworks",
-      items: ["React", "Node.js", "Express", "Django", "Flask"],
+      items: ["React", "Node.js", "Express", "Angular", "SQL", "PostgreSQL"],
     },
     {
       category: "Tools",
-      items: ["Git", "Docker", "AWS", "Firebase", "MongoDB"],
+      items: ["Git", "AWS"],
     },
   ];
 
@@ -439,10 +442,47 @@ function ExperienceSection() {
 }
 
 function ContactSection() {
+  const baseUrl = "http://localhost:8000";
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleFormChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleFormSubmit = async (e) => {
+
+    e.preventDefault();
+    try {
+      const req = await fetch(`${baseUrl}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "applicaton/json" },
+        body: JSON.stringify(formData)
+      });
+
+      if(response) {
+        console.log("Message send successfully");
+        return;
+      } else {
+        console.error("Failed to send the message");
+      }
+    } catch(err) {
+      console.log("Unexpected error occured");
+    }
+
+  };
+
   return (
     <section id="contact" className="py-16 px-4 md:px-20 lg:px-40 bg-blue-50">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-blue-200 pb-2">
-        Get In Touch ( i am 14 btw )
+        Get In Touch
       </h2>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
@@ -470,7 +510,7 @@ function ContactSection() {
                 </svg>
               </div>
               <a
-                href="mailto:krishna@finishup.com"
+                href="mailto:krishnaasinghbisht@gmail.com"
                 className="text-blue-600 hover:underline"
               >
                 krishnaasinghbisht@gmail.com
@@ -525,7 +565,7 @@ function ContactSection() {
           </div>
         </div>
         <div className="md:w-1/2">
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleFormSubmit}>
             <div>
               <label htmlFor="name" className="block text-gray-700 mb-1">
                 Name
@@ -533,6 +573,8 @@ function ContactSection() {
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleFormChange}
                 className="w-full p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Your Name"
               />
@@ -544,6 +586,8 @@ function ContactSection() {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleFormChange}
                 className="w-full p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Your Email"
               />
@@ -555,6 +599,8 @@ function ContactSection() {
               <textarea
                 id="message"
                 rows="4"
+                value={formData.message}
+                onChange={handleFormChange}
                 className="w-full p-2 border-2 border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Your Message"
               ></textarea>
