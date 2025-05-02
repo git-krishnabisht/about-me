@@ -146,7 +146,7 @@ function NavBarSection() {
           <a href="#contact" className="hover:text-blue-600 transition-colors">
             Contact
           </a>
-          <a href="#blogs" className="hover:text-blue-600 transition-colors">
+          <a href="#blog" className="hover:text-blue-600 transition-colors">
             Blogs
           </a>
         </div>
@@ -209,11 +209,11 @@ function NavBarSection() {
             Skills
           </a>
           <a
-            href="#experience"
+            href="#blog"
             className="hover:text-blue-600"
             onClick={toggleMenu}
           >
-            Experience
+            Blog
           </a>
           <a
             href="#contact"
@@ -437,7 +437,7 @@ function ExperienceItem({ period, title, company, description }) {
 
 function BlogSection() {
   return(
-    <section id="blogs" className="py-16 px-4 md:px-20 lg:px-40 bg-gray-50">
+    <section id="blog" className="py-16 px-4 md:px-20 lg:px-40 bg-gray-50">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-blue-200 pb-2">
         Blogs
       </h2>
