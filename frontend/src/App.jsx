@@ -499,7 +499,7 @@ function ContactSection() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const req = await fetch(`${baseUrl}/contact`, {
+      const req = await fetch(`/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

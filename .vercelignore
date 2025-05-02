@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+**/node_modules
+README.md
+.gitignore
+.env*
+!.env.example
+api/src/
+api/target/ 

@@ -1,11 +1,12 @@
 {
   "name": "aboutme",
+  "private": true,
   "version": "1.0.0",
+  "description": "Personal portfolio and contact website",
   "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }

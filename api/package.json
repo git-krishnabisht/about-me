@@ -1,0 +1,9 @@
+{
+  "name": "aboutme-api",
+  "version": "1.0.0",
+  "description": "API functions for contact form",
+  "main": "contact.js",
+  "dependencies": {
+    "nodemailer": "^6.9.9"
+  }
+} 
