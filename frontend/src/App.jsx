@@ -25,8 +25,9 @@ function DetailsSection() {
             Krishna Singh Bisht
           </p>
           <p className="text-sm md:text-base text-gray-600 mt-2 ">
-            Backend heavy fullstack web developer drastically leaning towards AI
-            and distributed system
+            Backend heavy fullstack web developer 
+            <br/>drastically leaning towards AI
+            and system design 
           </p>
           <div className="flex flex-row gap-4 mt-4 justify-center md:justify-start">
             <a
@@ -382,10 +383,7 @@ function AboutSection() {
             <li className="flex items-center gap-2">
               <span>
                 <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2"></span>
-                Making a exact copy of whatsapp with the same exact
-                functionality to learn how functions like end-to-end encrpytion,
-                complex real time communication with websockets, etc works . . .
-                ( will push it to github after completing 80%. )
+                Rigidifying web and communication by making copy of web.whatsapp.com encapsulating end-to-end encrpytion, handling multiple clients, etc from scratch.
               </span>
             </li>
             <li className="flex items-center gap-2">
