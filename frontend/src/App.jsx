@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import profileimage from "./assets/profile_image.png";
 
@@ -6,8 +6,10 @@ function QuoteSection() {
   return (
     <div className="w-full overflow-hidden border-b-2 border-black bg-blue-100">
       <div className="w-max animate-marquee text-base md:text-2xl px-6 py-2 font-medium text-gray-800">
-      "Behind it all is surely an idea so simple, so beautiful, that when we grasp it – in a decade, a century,
-       or a millennium – we will all say to each other, how could it have been otherwise?" - John Archibald Wheeler, Annals of the New York Academy of Sciences, 480 (1986)
+        "Behind it all is surely an idea so simple, so beautiful, that when we
+        grasp it – in a decade, a century, or a millennium – we will all say to
+        each other, how could it have been otherwise?" - John Archibald Wheeler,
+        Annals of the New York Academy of Sciences, 480 (1986)
       </div>
     </div>
   );
@@ -23,7 +25,8 @@ function DetailsSection() {
             Krishna Singh Bisht
           </p>
           <p className="text-sm md:text-base text-gray-600 mt-2 ">
-            Backend heavy fullstack web developer drastically leaning towards AI and distributed system
+            Backend heavy fullstack web developer drastically leaning towards AI
+            and distributed system
           </p>
           <div className="flex flex-row gap-4 mt-4 justify-center md:justify-start">
             <a
@@ -208,11 +211,7 @@ function NavBarSection() {
           >
             Skills
           </a>
-          <a
-            href="#blog"
-            className="hover:text-blue-600"
-            onClick={toggleMenu}
-          >
+          <a href="#blog" className="hover:text-blue-600" onClick={toggleMenu}>
             Blog
           </a>
           <a
@@ -229,6 +228,46 @@ function NavBarSection() {
 }
 
 function AboutSection() {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const tooltipRef = useRef(null);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(event.target) &&
+        textRef.current &&
+        !textRef.current.contains(event.target)
+      ) {
+        setShowTooltip(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [tooltipRef]);
+
+  const toggleTooltip = () => {
+    setShowTooltip(!showTooltip);
+  };
+
   return (
     <section id="about" className="py-16 px-4 md:px-20 lg:px-40 bg-gray-50">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-blue-200 pb-2">
@@ -238,59 +277,122 @@ function AboutSection() {
         <div className="md:w-2/3">
           <div className="text-gray-700 mb-4">
             Hey! Welcome.
-            <br/>
+            <br />
             <div>
               <p>
-              I learn and make my head-hot over some 0's and 1's and like to shoot my arrow at multiple bits. like -
+                I learn and make my head-hot over some 0's and 1's and like to
+                shoot my arrow at multiple bits. like -
               </p>
               <ul className="pl-4">
-                <li>Engineering fault tolerent to any kind, high performative, secure Full-stack Web Application in order to make anon life better.</li>
-                <li>Pondering how Machine Learning actually works to get the idea of it's potential effect on the future of humanity.</li>
+                <li>
+                  Engineering fault tolerent to any kind, high performative,
+                  secure Full-stack Web Application in order to make anon life
+                  better.
+                </li>
+                <li>
+                  Pondering how Machine Learning actually works to get the idea
+                  of it's potential effect on the future of humanity.
+                </li>
               </ul>
             </div>
           </div>
           <p className="text-gray-700 mb-4">
-            Sometimes i let my CPU ( cuz me ain't got no GPU ) work overtime to help my ML model become stronger, so it can score above 98% in inference, just as my ML models is becoming stronger minute-by-minute i am also getting to know the ML world better day-by-day, my knowledge about its world it not that strong yet but yeah ATLEAST I KNOW SOMETING, unlike some wonderer here.
-            <br/>
-             woah woah, i was just kidding.
+            Sometimes i let my CPU ( cuz me ain't got no GPU ) work overtime to
+            help my ML model become stronger, so it can score above 98% in
+            inference, just as my ML models is becoming stronger
+            minute-by-minute i am also getting to know the ML world better
+            day-by-day, my knowledge about its world it not that strong yet but
+            yeah ATLEAST I KNOW SOMETING, unlike some wonderer here.
+            <br />
+            woah woah, i was just kidding.
           </p>
           <p className="text-gray-700 mb-4">
-            If i am not doing either of those things you'll find my horses running through the lines of github repos, stack of research papers, injesting algorithms and galloping through leetcodes or sometime codeforces and diving into some other kind of literatures. 
+            If i am not doing either of those things you'll find my horses
+            running through the lines of github repos, stack of research papers,
+            injesting algorithms and galloping through leetcodes or sometime
+            codeforces and diving into some other kind of literatures.
           </p>
         </div>
 
         <div className="md:w-1/3 bg-blue-100 p-6 rounded-lg border-2 border-black">
           {" "}
-          <h3 className="text-xl font-semibold mb-4">📜 Currently doing . . . </h3>
+          <h3 className="text-xl font-semibold mb-4">
+            📜 Currently doing . . .{" "}
+          </h3>
           <ul className="space-y-2">
+            <li className="flex items-center gap-2 relative">
+              <span className="flex items-start flex-wrap">
+                <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
+                Exploring rust 🦀 while building a
+                <span
+                  ref={textRef}
+                  className={`ml-1 relative cursor-pointer text-blue-600 underline-offset-2 ${
+                    isMobile ? "underline" : "hover:underline"
+                  }`}
+                  onClick={toggleTooltip}
+                  onMouseEnter={() => !isMobile && setShowTooltip(true)}
+                  onMouseLeave={() => !isMobile && setShowTooltip(false)}
+                >
+                  POSIX compliant shell.
+                </span>
+                {showTooltip && (
+                  <div
+                    ref={tooltipRef}
+                    className={`absolute z-50 bg-blue-200 text-black p-3 border border-black rounded-md shadow-lg max-w-xs text-sm ${
+                      isMobile
+                        ? "top-full left-0 mt-2"
+                        : "bottom-full left-1/2 transform -translate-x-1/2 mb-2"
+                    }`}
+                  >
+                    <div className="relative">
+                      <p>
+                      A POSIX-compliant shell is a command-line interpreter that follows the POSIX standard (IEEE Std 1003.1) for shell behavior and syntax, ensuring portability and compatibility across Unix-like systems.
+                      </p>
+                      {isMobile && (
+                        <button
+                          onClick={() => setShowTooltip(false)}
+                          className="absolute -top-2 -right-2 bg-gray-700 text-white rounded-full w-6 h-6 flex items-center justify-center"
+                        >
+                          ×
+                        </button>
+                      )}
+                      {!isMobile && (
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-800 rotate-45"></div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </span>
+            </li>
             <li className="flex items-center gap-2">
               <span>
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2" ></span>
-                Exporing rust 🦀 to grab the idea of type safety and rigid memory managmenet which is important for every software that gets engineered.
+                <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2"></span>
+                On a marathon 🏃‍♂️ of ML <span className="text-3xl">→</span> DL{" "}
+                <span className="text-3xl">→</span> LLMs{" "}
+                <span className="text-3xl">→</span> AGI{" "}
+                <span className="text-3xl">→</span> ASI
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <span> 
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2" ></span>
-                On a marathon 🏃‍♂️ of ML <span className="text-xl">→</span> DL <span className="text-xl">→</span> LLMs <span className="text-xl">→</span> AGI <span className="text-xl">→</span> ASI
-              </span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span> 
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2" ></span>
+              <span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2"></span>
                 Listening 🎧 to - in my solitude by Billie Holiday
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <span> 
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2" ></span>
-                Making a exact copy of whatsapp with the same exact functionality to learn how functions like end-to-end encrpytion, complex real time communication with websockets, etc works . . .  ( will push it to github after completing 80%. )
+              <span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2"></span>
+                Making a exact copy of whatsapp with the same exact
+                functionality to learn how functions like end-to-end encrpytion,
+                complex real time communication with websockets, etc works . . .
+                ( will push it to github after completing 80%. )
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <span> 
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2" ></span>
-              Fact ⚖️ to know about me - At this present moment I don't comprehend some s**t doesn't mean I'd never will.
+              <span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2"></span>
+                Fact ⚖️ to know about me - At this present moment I don't
+                comprehend some s**t doesn't mean I'd never will.
               </span>
             </li>
           </ul>
@@ -322,33 +424,41 @@ function ProjectCard({ title, description, tags, link }) {
   );
 }
 
-
 function ProjectsSection() {
   const projects = [
     {
       title: "Hostel Outing Application using .NETcore",
-      description: "Application made as my minor project assessment for my university, that suggests a digitized solution to the legacy way of taking permits from the warden on a diary, that is a tedious process for both warden and students. This solution promises to cut the time taken by both warden and students to 40% in comparison to the previous procedure",
+      description:
+        "Application made as my minor project assessment for my university, that suggests a digitized solution to the legacy way of taking permits from the warden on a diary, that is a tedious process for both warden and students. This solution promises to cut the time taken by both warden and students to 40% in comparison to the previous procedure",
       tags: ["Angular", "Asp.Netcore", "SQL"],
       link: "https://github.com/krishnaasx/HostelOutingApplication",
     },
     {
       title: "Real-Time Chat Application using PERN",
       description:
-      "Application that I built for the purpose of learning ReactJs and Socket.io which is an implementation of websocket that facilitates different clients to communicate with each other simultaneously via websocket server.", 
+        "Application that I built for the purpose of learning ReactJs and Socket.io which is an implementation of websocket that facilitates different clients to communicate with each other simultaneously via websocket server.",
       tags: ["ReactJs", "NodeJs", "PostgreSQL", "Socket.io"],
       link: "https://github.com/krishnaasx/chat-app",
     },
     {
       title: "Dating Appplication using .NETcore",
-      description:"Made this application as my side-project for the purpose of learning how MVC architecture works with ASP.NETcore and how to introduce real-time communication to an application via SignalR websocket",
+      description:
+        "Made this application as my side-project for the purpose of learning how MVC architecture works with ASP.NETcore and how to introduce real-time communication to an application via SignalR websocket",
       tags: ["Angular", "Asp.Netcore", "SQL", "SignalR"],
-      link: "https://github.com/krishnaasx/DatingApp_Dotnet-8"
+      link: "https://github.com/krishnaasx/DatingApp_Dotnet-8",
     },
     {
       title: "Sentimental analysis NLP model using BERT",
       description:
-      "Another side project, which is a Natural processing machine learning model that classifies the sentiments of the set of texts or a corpus by leveraging the BERT classifier, which is trained on ~18k distinct parameters with inference of ~91% that could be used in websites such as those who uses reviews to analyze the public opinion about their product.",
-      tags: ["Python", "torch", "pandas", "transforms such as BERT", "sklearn", "joblib"],
+        "Another side project, which is a Natural processing machine learning model that classifies the sentiments of the set of texts or a corpus by leveraging the BERT classifier, which is trained on ~18k distinct parameters with inference of ~91% that could be used in websites such as those who uses reviews to analyze the public opinion about their product.",
+      tags: [
+        "Python",
+        "torch",
+        "pandas",
+        "transforms such as BERT",
+        "sklearn",
+        "joblib",
+      ],
       link: "https://github.com/krishnaasx/sentiment_analysis",
     },
   ];
@@ -367,7 +477,6 @@ function ProjectsSection() {
   );
 }
 
-
 function SkillsSection() {
   const skills = [
     {
@@ -376,11 +485,26 @@ function SkillsSection() {
     },
     {
       category: "Frontend Frameworks and libraries",
-      items: ["ReactJs", "Zustand", "Redux", "WebSocket clients", "Angular", "SignalR", "Tailwindcss"],
+      items: [
+        "ReactJs",
+        "Zustand",
+        "Redux",
+        "WebSocket clients",
+        "Angular",
+        "SignalR",
+        "Tailwindcss",
+      ],
     },
     {
       category: "Backend Frameworks and libraries",
-      items: ["Nodejs", "Express", "WebSocket servers", "Actix web", "Asp.Netcore", "MVC"],
+      items: [
+        "Nodejs",
+        "Express",
+        "WebSocket servers",
+        "Actix web",
+        "Asp.Netcore",
+        "MVC",
+      ],
     },
     {
       category: "Databases and ORMs",
@@ -436,7 +560,7 @@ function ExperienceItem({ period, title, company, description }) {
 }
 
 function BlogSection() {
-  return(
+  return (
     <section id="blog" className="py-16 px-4 md:px-20 lg:px-40 bg-gray-50">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-blue-200 pb-2">
         Blogs
@@ -504,7 +628,7 @@ function ContactSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-  
+
       if (req.ok) {
         console.log("Message sent successfully");
         setFormData({ name: "", email: "", message: "" });
@@ -517,7 +641,6 @@ function ContactSection() {
       console.log("Unexpected error occurred:", err);
     }
   };
-  
 
   return (
     <section id="contact" className="py-16 px-4 md:px-20 lg:px-40 bg-gray-50">
@@ -663,7 +786,7 @@ function Footer() {
           <p className="text-lg font-bold">Krishna Singh Bisht</p>
           <p className="text-sm text-blue-200">upcoming CEO of meta</p>
         </div>
-         {/* <div className="flex flex-row gap-4">
+        {/* <div className="flex flex-row gap-4">
           <a
             href="http://github.com/krishnaasx/"
             className="text-white hover:text-blue-200"
@@ -719,7 +842,7 @@ function Footer() {
             </div>
           </a>
         </div> */}
-      </div> 
+      </div>
       <div className="mt-6 text-center text-sm text-blue-200">
         © {new Date().getFullYear()} Krishna Singh Bisht. All rights reserved.
       </div>
