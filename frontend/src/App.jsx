@@ -324,7 +324,7 @@ function AboutSection() {
             <li className="flex items-center gap-2 relative">
               <span className="flex items-start flex-wrap">
                 <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
-                Exploring rust 🦀 while building a
+                Exploring C++ while building a
                 <span
                   ref={textRef}
                   className={`ml-1 relative cursor-pointer text-blue-600 underline-offset-2 ${
@@ -479,7 +479,7 @@ function SkillsSection() {
   const skills = [
     {
       category: "Programming Languages",
-      items: ["C++", "Python", "Javascript", "Rust", "C#"],
+      items: ["C++", "Python", "Javascript", "C#"],
     },
     {
       category: "Frontend Frameworks and libraries",
@@ -499,7 +499,6 @@ function SkillsSection() {
         "Nodejs",
         "Express",
         "WebSocket servers",
-        "Actix web",
         "Asp.Netcore",
         "MVC",
       ],
