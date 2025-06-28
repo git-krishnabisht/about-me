@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { QuoteSection } from "./components/QuoteSection";
 import { DetailsSection } from "./components/DetailsSection";

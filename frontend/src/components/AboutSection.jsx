@@ -52,6 +52,9 @@ export function AboutSection() {
             Hey! Welcome.
             <br />
             <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea numquam in, sed repudiandae minus quam tenetur dolorum necessitatibus esse nobis.
+            </div>
+            {/* <div>
               <p>
                 I learn and make my head-hot over some 0's and 1's and like to
                 shoot my arrow at multiple bits. like -
@@ -67,9 +70,9 @@ export function AboutSection() {
                   of it's potential effect on the future of humanity.
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
-          <p className="text-gray-700 mb-4">
+          {/* <p className="text-gray-700 mb-4">
             Sometimes i let my CPU ( cuz me ain't got no GPU ) work overtime to
             help my ML model become stronger, so it can score above 98% in
             inference, just as my ML models is becoming stronger
@@ -84,7 +87,7 @@ export function AboutSection() {
             running through the lines of github repos, stack of research papers,
             injesting algorithms and galloping through leetcodes or sometime
             codeforces and diving into some other kind of literatures.
-          </p>
+          </p> */}
         </div>
 
         <div className="md:w-1/3 bg-blue-100 p-6 rounded-lg border-2 border-black">
@@ -93,7 +96,11 @@ export function AboutSection() {
             📜 Currently doing . . .{" "}
           </h3>
           <ul className="space-y-2">
-            <li className="flex items-center gap-2 relative">
+            <li>
+              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
+              <span>Nothing</span>
+            </li>
+            {/* <li className="flex items-center gap-2 relative">
               <span className="flex items-start flex-wrap">
                 <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
                 Exploring C++ while building a
@@ -169,7 +176,7 @@ export function AboutSection() {
                 Fact ⚖️ to know about me - At this present moment I don't
                 comprehend some s**t doesn't mean I'd never will.
               </span>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
