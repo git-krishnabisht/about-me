@@ -10,9 +10,9 @@ export function DetailsSection() {
             Krishna Singh Bisht
           </p>
           <p className="text-sm md:text-base text-gray-600 mt-2 ">
-            Backend heavy fullstack web developer
+            Backend heavy fullstack web developer 
             <br />
-            drastically leaning towards AI and system design
+            integrating AI and concepts of system design
           </p>
           <div className="flex flex-row gap-4 mt-4 justify-center md:justify-start">
             <a
