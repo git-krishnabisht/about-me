@@ -25,28 +25,28 @@ export function ProjectsSection() {
     {
       title: "Hostel Outing Application using .NETcore",
       description:
-        "Application made as my minor project assessment for my university, that suggests a digitized solution to the legacy way of taking permits from the warden on a diary, that is a tedious process for both warden and students. This solution promises to cut the time taken by both warden and students to 40% in comparison to the previous procedure",
+        "A digital solution to replace the traditional method of obtaining outing permits from the warden using a physical diary. This application streamlines the process for both students and wardens, reducing the time required by up to 40% compared to the manual procedure.",
       tags: ["Angular", "Asp.Netcore", "SQL"],
       link: "https://github.com/krishnaasx/HostelOutingApplication",
     },
     {
       title: "Real-Time Chat Application using PERN",
       description:
-        "Application that I built for the purpose of learning ReactJs and Socket.io which is an implementation of websocket that facilitates different clients to communicate with each other simultaneously via websocket server.",
+        "A real-time chat application built using ReactJS and Socket.io, enabling multiple clients to communicate simultaneously through a WebSocket server. Built with the PERN stack for full-stack functionality.",
       tags: ["ReactJs", "NodeJs", "PostgreSQL", "Socket.io"],
       link: "https://github.com/krishnaasx/chat-app",
     },
     {
-      title: "Dating Appplication using .NETcore",
+      title: "Dating Application using .NETcore",
       description:
-        "Made this application as my side-project for the purpose of learning how MVC architecture works with ASP.NETcore and how to introduce real-time communication to an application via SignalR websocket",
+        "A dating application where users can create profiles, connect, and communicate with each other in real time. Built using .NET Core and SignalR for live interactions.",
       tags: ["Angular", "Asp.Netcore", "SQL", "SignalR"],
       link: "https://github.com/krishnaasx/DatingApp_Dotnet-8",
     },
     {
       title: "Sentimental analysis NLP model using BERT",
       description:
-        "Another side project, which is a Natural processing machine learning model that classifies the sentiments of the set of texts or a corpus by leveraging the BERT classifier, which is trained on ~18k distinct parameters with inference of ~91% that could be used in websites such as those who uses reviews to analyze the public opinion about their product.",
+        "A natural language processing model that classifies text sentiment using a BERT-based classifier. Trained on approximately 18,000 samples, achieving around 91% accuracy. This model can be integrated into platforms to analyze user reviews and gauge public sentiment.",
       tags: [
         "Python",
         "torch",
