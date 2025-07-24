@@ -98,7 +98,7 @@ export function AboutSection() {
           <ul className="space-y-2">
             <li>
               <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
-              <span>Nothing</span>
+              <span>Not sure</span>
             </li>
             {/* <li className="flex items-center gap-2 relative">
               <span className="flex items-start flex-wrap">

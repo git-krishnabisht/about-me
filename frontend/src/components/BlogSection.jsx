@@ -5,7 +5,8 @@ export function BlogSection() {
         Blogs
       </h2>
       <div>
-        <h3>Cooking 🍲 . . . .</h3>
+        <p>Cooking 🍲 . . . .</p>
+        <p>What is with those syscalls in sockets and what is even socket anyway?</p>
       </div>
     </section>
   );

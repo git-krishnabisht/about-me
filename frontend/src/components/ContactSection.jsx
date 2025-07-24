@@ -112,10 +112,10 @@ export function ContactSection() {
                 </svg>
               </div>
               <a
-                href="https://github.com/krishnaasx"
+                href="https://github.com/git-krishnabisht"
                 className="text-blue-600 hover:underline"
               >
-                github.com/krishnaasx
+                github.com/git-krishnabisht
               </a>
             </div>
           </div>

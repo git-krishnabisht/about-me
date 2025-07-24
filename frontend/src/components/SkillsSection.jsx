@@ -2,23 +2,15 @@ export function SkillsSection() {
   const skills = [
     {
       category: "Programming Languages",
-      items: ["C++", "Python", "Javascript", "C#"],
+      items: ["C++", "Python", "Javascript"],
     },
     {
-      category: "Frontend Frameworks and libraries",
-      items: [
-        "ReactJs",
-        "Zustand",
-        "Redux",
-        "WebSocket clients",
-        "Angular",
-        "SignalR",
-        "Tailwindcss",
-      ],
+      category: "Frontend, Frameworks and libraries",
+      items: ["HTML", "Reactjs", "Zustand", "Redux", "Angular", "Tailwindcss"],
     },
     {
       category: "Backend Frameworks and libraries",
-      items: ["Nodejs", "Express", "WebSocket servers", "Asp.Netcore", "MVC"],
+      items: ["Nodejs", "Expressjs", "Socket.io"],
     },
     {
       category: "Databases and ORMs",
@@ -26,7 +18,11 @@ export function SkillsSection() {
     },
     {
       category: "Tools",
-      items: ["Git", "AWS", "Redis", "Postman", "Linux distro - ubuntu"],
+      items: ["Git", "AWS", "Redis", "Linux", "Docker"],
+    },
+    {
+      category: "Many more cool stuff to add to the arsenal yet . . . . ",
+      items: ["Kubernetes", "Github actions", "Golang"],
     },
   ];
 
