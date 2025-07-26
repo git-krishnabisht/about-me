@@ -1,6 +1,6 @@
 # About Me Portfolio
 
-A personal portfolio website with a contact form functionality.
+A personal portfolio website with a serverless endpoint for my vercel deployment (similar to next.js where each file behaves as an http endpoint) 
 
 ## Structure
 
@@ -18,6 +18,17 @@ cd frontend
 npm install
 npm run dev
 ```
+
+## If you’re not using Next.js, but just want to test Vercel-like serverless functions:
+
+You'll need the Vercel CLI:
+
+```
+npm i -g vercel
+vercel dev
+```
+
+This simulates the Vercel environment, allowing you to run serverless functions locally
 
 ## Deployment
 
