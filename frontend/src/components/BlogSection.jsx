@@ -7,6 +7,7 @@ export function BlogSection() {
       <div>
         <p>Cooking 🍲 . . . .</p>
         <p>What is with those syscalls in sockets and what is even socket anyway?</p>
+<p>Oauth2.0 flow: authentication and authorization</p>
       </div>
     </section>
   );
