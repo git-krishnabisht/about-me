@@ -22,7 +22,7 @@ export function SkillsSection() {
     },
     {
       category: "Many more cool stuff to add to the arsenal yet . . . . ",
-      items: ["Kubernetes", "Github actions", "Golang"],
+      items: ["Kubernetes", "Github actions", "Golang", "Jetkins"],
     },
   ];
 

@@ -5,18 +5,20 @@ export function BlogSection() {
         Blogs
       </h2>
       <div>
-          <p>Cooking 🍲 . . . .</p>
-          <ul className="space-y-2">
-            <li>
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
-              <span>What is with those syscalls in sockets and what is even socket anyway?</span>
-            </li>
-<li>
-              <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
-              <span>Oauth2.0 flow: authentication and authorization</span>
-            </li>
-             
-          </ul>
+        <p>Cooking 🍲 . . . .</p>
+        <ul className="space-y-2">
+          <li>
+            <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
+            <span>
+              What is with those syscalls in sockets and what is even socket
+              anyway?
+            </span>
+          </li>
+          <li>
+            <span className="w-2 h-2 bg-blue-500 rounded-full inline-block shrink-0 mr-2 mt-2"></span>
+            <span>Oauth2.0 flow: authentication and authorization</span>
+          </li>
+        </ul>
       </div>
     </section>
   );

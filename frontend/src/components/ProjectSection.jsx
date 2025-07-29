@@ -26,7 +26,7 @@ export function ProjectsSection() {
       title: "Real-Time Chat Application using PERN",
       description:
         "A real-time chat application built using ReactJS and Socket.io, enabling multiple clients to communicate simultaneously through a WebSocket server. Built with the PERN stack for full-stack functionality.",
-      tags: ["Reactjs", "Nodejs", "Expressjs", "PostgreSQL", "Socket.io"],
+      tags: ["Reactjs", "Nodejs", "Expressjs", "PostgreSQL", "Socket.io", "Oauth2.0"],
       link: "https://github.com/git-krishnabisht/chat-app",
     },
     {
