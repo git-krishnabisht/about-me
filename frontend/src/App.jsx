@@ -20,10 +20,11 @@ function App() {
         <ProjectsSection />
         <SkillsSection />
         {/* <ExperienceSection /> */}
+        {/* { <Testing/> } */}
         <BlogSection />
         <ContactSection />
       </main>
-      <FooterSection/>
+      <FooterSection />
     </div>
   );
 }
