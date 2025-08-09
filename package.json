@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "description": "Personal portfolio and contact website",
   "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "start": "cd frontend && npm run start",
     "build": "cd frontend && npm install && npm run build"
   },
   "keywords": [],

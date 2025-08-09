@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+#about,
+#projects,
+#skills,
+#contact,
+#blog {
+  scroll-margin-top: 20px;
+}
+
+
 :root {
   font-family: "Underdog", system-ui;
   font-weight: 500;
@@ -11,4 +20,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[theme="dark"] {
+  background-color: black;
+  color: white;
 }
