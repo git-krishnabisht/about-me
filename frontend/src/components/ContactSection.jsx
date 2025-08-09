@@ -152,6 +152,17 @@ function BlackHoleAnimation({ theme }) {
 }
 
 export function ContactSection({ theme }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsDesktop(window.innerWidth >= 768);
+    checkScreen();
+
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -263,9 +274,10 @@ export function ContactSection({ theme }) {
                 </div>
               </div>
 
-              <div className={`relative overflow-hidden rounded-xl border ${theme === 'green' ? 'border-green-400/10' : 'border-blue-400/10'} bg-black/50 flex-1 min-h-[250px]`}>
+              {isDesktop && <div className={`relative overflow-hidden rounded-xl border ${theme === 'green' ? 'border-green-400/10' : 'border-blue-400/10'} bg-black/50 flex-1 min-h-[250px]`}>
                 <BlackHoleAnimation theme={theme} />
-              </div>
+              </div>}
+
             </div>
           </div>
 
