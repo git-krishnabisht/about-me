@@ -122,7 +122,7 @@ function App() {
 
   // Load theme from localStorage on first render
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "green";
+    return localStorage.getItem("theme") || "blue";
   });
 
   const toggleTheme = () => {
