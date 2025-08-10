@@ -19,9 +19,8 @@ function BlackHoleAnimation({ theme }) {
 
     let time = 0;
     const particles = [];
-    const particleCount = 150;
+    const particleCount = 200;
 
-    // Initialize particles
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         angle: Math.random() * Math.PI * 2,
