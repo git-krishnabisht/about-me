@@ -110,6 +110,16 @@ function AnimatedBackground({ theme }) {
 }
 
 function App() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsDesktop(window.innerWidth >= 768);
+    checkScreen();
+
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   // Load theme from localStorage on first render
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "green";
@@ -140,7 +150,7 @@ function App() {
     <div className="relative min-h-screen">
       <AnimatedBackground theme={theme} />
       <div className="relative z-10">
-        <QuoteSection theme={theme} />
+        {isDesktop && <QuoteSection theme={theme} />}
         <DetailsSection theme={theme} />
         <NavBarSection theme={theme} toggleTheme={toggleTheme} />
         <main>
