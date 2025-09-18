@@ -33,8 +33,8 @@ function AnimatedBackground({ theme }) {
     generateDots();
 
     const interval = setInterval(() => {
-      setDots(prevDots =>
-        prevDots.map(dot => ({
+      setDots((prevDots) =>
+        prevDots.map((dot) => ({
           ...dot,
           x: (dot.x + dot.speedX + 100) % 100,
           y: (dot.y + dot.speedY + 100) % 100,
@@ -73,7 +73,7 @@ function AnimatedBackground({ theme }) {
       <div className={`absolute inset-0 ${getBackgroundGradient()}`}></div>
       <div className={`absolute inset-0 ${getOverlayGradient()}`}></div>
 
-      {dots.map(dot => (
+      {dots.map((dot) => (
         <div
           key={dot.id}
           className="absolute rounded-full"
@@ -83,7 +83,9 @@ function AnimatedBackground({ theme }) {
             width: `${dot.size}px`,
             height: `${dot.size}px`,
             opacity: dot.opacity,
-            background: `radial-gradient(circle, ${dotColor.color} 0%, ${dotColor.color.replace(
+            background: `radial-gradient(circle, ${
+              dotColor.color
+            } 0%, ${dotColor.color.replace(
               "1)",
               "0.8)"
             )} 30%, transparent 70%)`,
@@ -98,12 +100,14 @@ function AnimatedBackground({ theme }) {
       ))}
 
       <div
-        className={`absolute top-1/4 right-1/3 w-96 h-96 ${theme === "green" ? "bg-green-500/2" : "bg-blue-500/2"
-          } rounded-full blur-3xl`}
+        className={`absolute top-1/4 right-1/3 w-96 h-96 ${
+          theme === "green" ? "bg-green-500/2" : "bg-blue-500/2"
+        } rounded-full blur-3xl`}
       ></div>
       <div
-        className={`absolute bottom-1/3 left-1/4 w-64 h-64 ${theme === "green" ? "bg-emerald-400/2" : "bg-indigo-400/2"
-          } rounded-full blur-2xl`}
+        className={`absolute bottom-1/3 left-1/4 w-64 h-64 ${
+          theme === "green" ? "bg-emerald-400/2" : "bg-indigo-400/2"
+        } rounded-full blur-2xl`}
       ></div>
     </div>
   );
@@ -126,7 +130,7 @@ function App() {
   });
 
   const toggleTheme = () => {
-    setTheme(prev => {
+    setTheme((prev) => {
       const newTheme = prev === "green" ? "blue" : "green";
       localStorage.setItem("theme", newTheme);
       return newTheme;
@@ -135,7 +139,7 @@ function App() {
 
   // Sync theme if changed from another tab
   useEffect(() => {
-    const handleStorage = event => {
+    const handleStorage = (event) => {
       if (event.key === "theme" && event.newValue) {
         setTheme(event.newValue);
       }
@@ -164,6 +168,16 @@ function App() {
       </div>
 
       <style>{`
+      ${ theme === "green"
+          ? `::selection {
+                background: #17bb74;  
+                color: black;
+              }`
+          : `::selection {
+                background: #18b3d2;  
+                color: black;         
+              }`
+       }
         @keyframes marquee {
           0% { transform: translateX(100%); }
           100% { transform: translateX(-100%); }
@@ -177,4 +191,3 @@ function App() {
 }
 
 export default App;
-
